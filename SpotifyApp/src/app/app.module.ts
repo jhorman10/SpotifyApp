@@ -11,6 +11,7 @@ import { ArtistaComponent } from './components/artista/artista.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { TargetasComponent } from './components/targetas/targetas.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { TargetasComponent } from './components/targetas/targetas.component';
     ArtistaComponent,
     NavbarComponent,
     NoimagePipe,
-    TargetasComponent
+    TargetasComponent,
+    LoadingComponent
   ],
   imports: [
   BrowserModule,

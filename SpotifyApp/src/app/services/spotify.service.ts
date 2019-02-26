@@ -15,7 +15,7 @@ export class SpotityService {
 
     const URL =`https://api.spotify.com/v1/${ query }`;
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQBAsFmZuZk1YbDx-E7uGgd4jwsa_1fQ4R-IERPx4Ow6BDfRB2vSyn3kStRoB53CGLGkEmvMJj7ZX6JrCpc'
+      'Authorization': 'Bearer BQAQHPN_AFqYE014aYI7DoByJTLhEudoDv8-i_Gtk6vpyGS2HqIAJJJVV3Ftyq87slKZOlz_sZ6uF6-Lzdo'
     });
 
     return this.http.get(URL, {headers});
@@ -28,10 +28,17 @@ export class SpotityService {
                 
   }
 
-  getArtista(termino:string){
+  getArtistas(termino:string){
    
     return this.getQuery(`search?query=${ termino }&type=artist&market=CO&offset=0&limit=15`)
                 .pipe( map( data => data['artists'].items));
+
+  }
+
+  getArtista(id: string) {
+
+    return this.getQuery(`artists/${ id }`)
+      // .pipe(map(data => data['artists'].items));
 
   }
 }
