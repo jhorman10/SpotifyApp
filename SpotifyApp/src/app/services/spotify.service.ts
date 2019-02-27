@@ -15,7 +15,7 @@ export class SpotityService {
 
     const URL =`https://api.spotify.com/v1/${ query }`;
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQAQHPN_AFqYE014aYI7DoByJTLhEudoDv8-i_Gtk6vpyGS2HqIAJJJVV3Ftyq87slKZOlz_sZ6uF6-Lzdo'
+      'Authorization': 'Bearer BQAWyV4ZQqrwGJ6RImI6ydZ4cSeJUJZmbQmW5zdNhtzJHNM5zGKRiaE_9l9MoLxR2Cp9MumA2RoO19zR4NA'
     });
 
     return this.http.get(URL, {headers});
@@ -37,8 +37,13 @@ export class SpotityService {
 
   getArtista(id: string) {
 
-    return this.getQuery(`artists/${ id }`)
-      // .pipe(map(data => data['artists'].items));
+    return this.getQuery(`artists/${ id }`);
 
+  }
+
+  getTopTracks(id: string) {
+
+    return this.getQuery(`artists/${id}/top-tracks?country=us`)
+                .pipe( map( data=> data['tracks']));
   }
 }

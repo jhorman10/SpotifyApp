@@ -1,2 +1,13 @@
 <app-loading *ngIf="loading"></app-loading>
-<app-targetas [items]="nuevasCanciones"></app-targetas>
+
+<div *ngIf="error" class="alert alert-danger">
+    <h3>Error</h3>
+    <p>
+        {{ mensajeError }}
+    </p>
+</div>
+
+<app-targetas   [items]="nuevasCanciones" 
+                class="d-flex ml-5 justify-content-center align-items-center">
+
+</app-targetas>

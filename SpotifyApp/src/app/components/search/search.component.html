@@ -4,6 +4,14 @@
   </div>
 </div>
 
+<div *ngIf="error" class="alert alert-danger mb-5">
+  <h3>Error</h3>
+  <p>
+    {{ mensajeError }}
+  </p>
+</div>
+
 <app-loading *ngIf="loading"></app-loading>
+
 
 <app-targetas *ngIf="!loading" [items]="artistas"></app-targetas>
